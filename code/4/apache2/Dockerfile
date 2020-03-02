@@ -1,6 +1,7 @@
 FROM ubuntu:18.04
 LABEL maintainer="james@example.com"
 ENV REFRESHED_AT 2013-07-28
+RUN sed -i "s/archive.ubuntu.com/mirrors.aliyun.com/g" /etc/apt/sources.list
 RUN apt-get update
 RUN apt-get install -y apache2
 ENV APACHE_RUN_USER www-data
